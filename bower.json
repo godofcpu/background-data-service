@@ -1,0 +1,27 @@
+{
+  "name": "background-data-service",
+  "version": "1.0.0",
+  "homepage": "https://github.com/godofcpu/background-data-service",
+  "authors": [
+    "Chuck Holbrook <chuck@streetdeck.com>"
+  ],
+  "description": "AngularJs service that waits until network traffic is idle to call services in the background",
+  "main": "BackgroundDataService.js",
+  "keywords": [
+    "background",
+    "angularjs",
+    "network",
+    "performance"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": ">= 1.0.8"
+  }
+}
