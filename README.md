@@ -7,8 +7,10 @@ active use.
 
 ## Get Started
 
-**(1)** Use Bower to get 
-`$ bower install background-data-service` 
+**(1)** Use Bower to get  background-data-service
+```
+bower install background-data-service
+```
 
 **(2)** Include `BackgroundDataService.js` in your angular app
 
