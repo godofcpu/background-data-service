@@ -42,15 +42,16 @@ var globalBackgroundDataInterceptor;
      * The init function should be called from your app.js either when the app starts  or when logging in.  You should
      * call stop when you log out assuming you need to be authorized to call the services
      *
-     *       BackgroundDataService.init();
+        //Its usually best to call this after you log in
+        BackgroundDataService.init();
 
-     // Data to get in the background when idle
-     var deferredRecent = $q.defer();
-     deferredRecent.promise.then(function(){
-                RecentService.getRecent('patient');
-                FavoritesService.getFavoritePrescriptions();
-            });
-     BackgroundDataService.callMeWhenIdle(deferredRecent);
+         // Data to get in the background when idle
+         var deferredRecent = $q.defer();
+         deferredRecent.promise.then(function(){
+                    RecentService.getRecent('patient');
+                    FavoritesService.getFavoritePrescriptions();
+                });
+         BackgroundDataService.callMeWhenIdle(deferredRecent);
      *
      * @returns {{}}
      * @constructor

@@ -1,5 +1,9 @@
 # background-data-service
-AngularJs service that waits until network traffic is idle to make network calls in the background for future use
+AngularJs service that waits until network traffic is idle to make network calls in the background for future use.  
+
+This was originally built for an ionic mobile app for often visited pages that required global data that could not be
+cached locally as it contained PII (personally identifiable information) that needed to remain on the server unless in
+active use.
 
 ## Get Started
 
@@ -18,8 +22,9 @@ example section for more details.
 
 ### Example
 
-NOTE: This is an **Incomplete Example** TokenService, RecentService, FavoritesService are not provided.  You should replace TokenService with your 
-authentication provider.  RecentService and FavoritesService are the services that should be called when idle.
+NOTE: This is an **Incomplete Example** TokenService, RecentService, FavoritesService are not provided.  You should 
+replace TokenService with your authentication provider.  RecentService and FavoritesService are the services that 
+should be called when idle.
 
 ```js
 angular.module('yourApp').run(function ($q, $rootScope, TokenService, RecentService, FavoritesService) {
@@ -37,7 +42,7 @@ angular.module('yourApp').run(function ($q, $rootScope, TokenService, RecentServ
         //Start the background idle timer after logging in, stop it when logging out
         $rootScope.$on(TokenService.authenticationStatusChanged, function (event, loggedIn) {
             if (loggedIn) {
-                BackgroundDataService.init();
+                BackgroundDataService.init(3 /*idle seconds*/, true /* debug logging on */);
             } else {
                 BackgroundDataService.stop();
             }
